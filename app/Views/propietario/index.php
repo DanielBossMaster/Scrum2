@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Propietario</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0e6ee;
+            color: white;
+            text-align: center;
+        }
+        
+        header {
+ background: linear-gradient(to right,#d600b9, #2c0045);
+ padding: 5px;
+ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+ display: flex;
+ justify-content: space-between;
+}
+
+header img {
+ width: 80px;
+ height: auto;
+ justify-content: left;
+
+}
+
+nav {
+ display: flex;
+ margin-top: 5px;
+ gap: 30px;
+}
+.links a {
+ text-decoration: none;
+ color: #e6d8d8;
+ font-weight: bold;
+
+}
+        
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            color: #4A148C;
+            padding: 30px;
+            border-radius: 16px;
+            margin-top: 30px;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+        
+        h2 {
+            text-align: center;
+            color: #6A1B9A;
+        }
+        
+        .button {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            background-color: #6A1B9A;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        .button:hover {
+            background-color: #4A148C;
+        }
+        
+        .seccion {
+            display: none;
+            margin-top: 20px;
+        }
+        
+        .info-box,
+        .mascota,
+        .historia {
+            background-color: #f3e5f5;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+        
+        .btn-secundario {
+            background-color: #6A1B9A;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        .formulario input {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            margin-top: 8px;
+            margin-bottom: 12px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+        
+        .formulario button {
+            background-color: #6A1B9A;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        .historia {
+            font-size: 14px;
+            display: none;
+        }
+        
+        footer {
+            margin: 40px 0;
+            font-size: 12px;
+            color: #ccc;
+            text-align: center;
+        }
+    </style>
+
+    
+</head>
+
+<body>
+
+   <header>
+     <div class="logo">
+        <img src="img/logo.png" title="logo" alt="logo">
+    </div>
+    <nav class="links">  
+        <a href="error404.html">Comprar</a> 
+        <a href="dashboard.html" title="Dashboard">Veterinaria</a> 
+        <a href="formulario.html" title="Formulario">Registrar Mascota</a> 
+        <a href="login.html" title="login">Cerrar sesion </a>    
+    </nav>
+</header>
+    <div class="container" >
+        <h2>Bienvenido  </h2>
+<?php foreach ($propietario as $prop): ?>
+        <button class="button" > Datos del Propietario</button>
+       
+            <div class="info-box" id="datosPropietario">
+                
+                <p><strong>Documento</strong> <?= esc($prop['num_doc']); ?></p>
+                <p><strong>Nombre:</strong> <?= esc($prop['nombre_pro']); ?></p>
+                <p><strong>Dirección:</strong> <?= esc($prop['direccion_pro']); ?></p>
+                <p><strong>Teléfono:</strong> <?= esc($prop['telefono_pro']); ?></p>
+            </div>
+            <?php endforeach; ?>
+            <button <?php echo base_url('/propietario/editar');?> > Actualizar Datos</button>
+            <div id="formularioEditar" class="formulario" style="display: none;">
+                <input type="text" id="tipoDoc" placeholder="Tipo de Documento">
+                <input type="text" id="numeroDoc" placeholder="Número de Documento">
+                <input type="text" id="nombre" placeholder="Nombre Completo">
+                <input type="text" id="direccion" placeholder="Dirección">
+                <input type="text" id="telefono" placeholder="Teléfono">
+                <button> Guardar</button>
+            </div>
+        </div>
+
+        <button class="button"> Mascotas</button>
+        
+
+            <!-- Mascota Sara -->
+            <div class="mascota">
+                <h4> Sara</h4>
+                <button class="btn-secundario"> Historia Clínica</button>
+                <div id="historia-sara" class="historia">
+                    <p><strong>Raza:</strong> Labrador</p>
+                    <p><strong>Color:</strong> Negro</p>
+                    <p><strong>Edad:</strong> 5 años</p>
+                    <p><strong>Fecha de Vacunación:</strong> 2024-12-01</p>
+                    <p><strong>Vacuna Aplicada:</strong> Rabia</p>
+                    <p><strong>Medicamentos:</strong> Antibióticos (abril 2024)</p>
+                    <button class="btn-secundario" > Imprimir Historia</button>
+                </div>
+            </div>
+
+            <!-- Mascota Max -->
+            <div class="mascota">
+                <h4> Max</h4>
+                <button class="btn-secundario"> Historia Clínica</button>
+                <div id="historia-max" class="historia">
+                    <p><strong>Raza:</strong> Schnauzer</p>
+                    <p><strong>Color:</strong> Negro</p>
+                    <p><strong>Edad:</strong> 6 meses</p>
+                    <p><strong>Fecha de Vacunación:</strong> 2024-12-01</p>
+                    <p><strong>Vacuna Aplicada:</strong> Rabia</p>
+                    <p><strong>Medicamentos:</strong> Antibióticos (abril 2024)</p>
+                    <button class="btn-secundario"> Imprimir Historia</button>
+                </div>
+            </div>
+
+            <!-- Mascota Hanna -->
+            <div class="mascota">
+                <h4> Hanna</h4>
+                <button class="btn-secundario"> Historia Clínica</button>
+                <div id="historia-hanna" class="historia">
+                    <p><strong>Raza:</strong> Atigrada</p>
+                    <p><strong>Color:</strong> Blanco, gris y naranja</p>
+                    <p><strong>Edad:</strong> 6 meses</p>
+                    <p><strong>Fecha de Vacunación:</strong> 2025-01-15</p>
+                    <p><strong>Vacuna Aplicada:</strong> Moquillo</p>
+                    <p><strong>Medicamentos:</strong> Ninguno</p>
+                    <button class="btn-secundario"> Imprimir Historia</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Contenedor invisible para imprimir PDF -->
+    <div id="print-area" style="display: none;"></div>
+
+    <footer>
+        © 2025 App Cannia. Todos los derechos reservados.
+    </footer>
+
+</body>
+
+</html>
+
+
