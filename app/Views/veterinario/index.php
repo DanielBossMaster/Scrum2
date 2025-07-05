@@ -139,7 +139,7 @@
 
 <header>
   <div class="logo">
-    <img src="img/logo.png" alt="logo">
+    <img src="<?= base_url('/img/logo.png') ?>" alt="logo">
   </div>
   <nav class="links">
     <a href="login.html">Cerrar sesión</a>
@@ -188,7 +188,7 @@
         <input type="text" placeholder="Color" name = "color">
         <label ><strong>Numero de Documento</strong></label>
         <input type="text" placeholder="Genero" name = "genero">
-        <button><strong>Registrar Mascota</strong></button>
+        <button class= "button"><strong>Registrar Mascota</strong></button>
         
       </form>
      
@@ -210,8 +210,10 @@
             <?php if ($masc['num_propietario'] == $prop['num_doc']): ?>
               
                 <strong><?= esc($masc['nom_mascota']); ?></strong> -
-                <?= esc($masc['especie']); ?>, <?= esc($masc['color']); ?>
-              
+                <?= esc($masc['especie']); ?>, <?= esc($masc['color']); ?><br>
+                <strong>Nombre de Vacuna:</strong><?= esc($masc['nom_vacuna']); ?><br>
+                 <strong>Fecha de vacunacion</strong><?= esc($masc['fecha_vacunacion']); ?><br>
+                 <strong>Medicamentos:</strong><?= esc($masc['medicamento']); ?>
             <?php endif; ?>
           <?php endforeach; ?>
         

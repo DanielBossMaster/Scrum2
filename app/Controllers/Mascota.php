@@ -36,13 +36,13 @@ public function editar($id)
         $model->delete($id);
         return redirect()->to('/veterinario');
     }
- public function actualizar($id)
-    {
-        $model = new MascotaModel();
-        $model->update($id, $this->request->getPost());
-        return redirect()->to('/veterinario');
-    }
 
+public function actualizar($id)
+{
+    $model = new MascotaModel();
+    $model->update($id, $this->request->getPost());
+    return redirect()->to('/veterinario');
+}
 
 
 

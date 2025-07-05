@@ -59,6 +59,7 @@ public function editar($num_doc)
     }
  public function actualizar($id)
     {
+       
         $model = new PropietarioModel();
         $model->update($id, $this->request->getPost());
         return redirect()->to('/veterinario');

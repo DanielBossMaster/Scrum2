@@ -84,7 +84,7 @@
 </head>
 <header>
   <nav class="logo">
-    <img src="logo.png" alt="logo">
+    <img src="<?= base_url('/img/logo.png') ?>" alt="logo">
   </nav>
   <nav class="links">
     <a href="login.html">Cerrar sesión</a>
@@ -92,6 +92,7 @@
 </header>
 
 <body>
+  
     <div class="container">
     <div class="fila">
     <section>
@@ -113,8 +114,9 @@
         <button>Actualizar informacion Propietario</button>
         </form>
      <form method="post" action="<?= base_url('/mascota/actualizar/' . $mascota['id_mascota']) ?>">
+      <input type="hidden" name="id_mascota" value="<?= $mascota['id_mascota'] ?>">
         <label ><strong>Nombre </strong></label>
-        <input type="text" name="nom_mascota" value= <?= $mascota['nom_mascota'];?>  >
+        <input type="text" name="nom_mascota" value= <?= $mascota['nom_mascota'];?> readonly >
         <label ><strong>Fecha Vacunacion</strong></label>
         <input type="date" name="fecha_vacunacion" value= <?= $mascota['fecha_vacunacion'];?>  >
         <label ><strong>Nombre de Vacuna</strong></label>
