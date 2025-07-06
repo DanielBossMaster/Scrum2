@@ -22,6 +22,10 @@ class LoginController extends BaseController {
         
 
         if ($usuarioEncontrado) {
+
+            session()->set('usuario', $usuarioEncontrado['nombre_usu']);
+            session()->set('rol', $usuarioEncontrado['rol_id']);
+
             switch ($usuarioEncontrado["rol_id"]) {
                 case '5':
                     return redirect()->to('/propietario');
@@ -35,11 +39,17 @@ class LoginController extends BaseController {
                 break;
             }
         }else{
-            return redirect()->back()->with('error','Credenciales Incorrectas');
+            return redirect()->back()->with('mensajeError','Error en usuario y/o contraseña');
         };
        
 
 
+    }
+
+
+    public function cerrarSesion(){
+        session()->destroy();
+        return redirect()->to('/login');
     }
 
 

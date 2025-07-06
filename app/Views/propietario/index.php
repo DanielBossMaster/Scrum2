@@ -143,7 +143,7 @@ nav {
         <a href="error404.html">Comprar</a> 
         <a href="dashboard.html" title="Dashboard">Veterinaria</a> 
         <a href="formulario.html" title="Formulario">Registrar Mascota</a> 
-        <a href="login.html" title="login">Cerrar sesion </a>    
+        <a href="<?= base_url('cerrar-sesion') ?>" title="login">Cerrar sesion </a>    
     </nav>
 </header>
     <div class="container" >

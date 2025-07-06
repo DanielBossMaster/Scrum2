@@ -142,7 +142,7 @@
     <img src="<?= base_url('/img/logo.png') ?>" alt="logo">
   </div>
   <nav class="links">
-    <a href="login.html">Cerrar sesión</a>
+    <a href="<?= base_url('cerrar-sesion') ?>">Cerrar sesión</a>
   </nav>
 </header>
 

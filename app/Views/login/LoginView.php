@@ -135,18 +135,18 @@
                 <input type="password" id="password" name="password" required>
             </div>
           
-            <?php if(session('error')): ?>
-                <div class="alert"><?= session('error'); ?></div>
+            <?php if(session('mensajeError')): ?>
+                <div class="alert"><?= session('mensajeError'); ?></div>
             <?php endif;?>
 
             <div class="botones">
                 <button type="submit" class="boton-ingreso"><strong>Ingresar</strong></button>
             </div>
-                <div class="botones">
-                <button type="submit" class="boton-registro"><strong>Registrarse</strong></button>
-            </div>
-            <a href="error500.html" class="restablecer">¿Olvidaste tu contraseña?</a>
         </form>
+        <div class="botones">
+            <button type="submit" class="boton-registro"><strong>Registrarse</strong></button>
+        </div>
+        <a href="#" class="restablecer">¿Olvidaste tu contraseña?</a>
     </div>
 </body>
 <footer>

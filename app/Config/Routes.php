@@ -9,6 +9,7 @@ $routes->get('/', 'Home::index');
 
 $routes->get('/login','LoginController::traerPagina');
 $routes->post('/login/acceder','LoginController::iniciarSesion');
+$routes->get('/cerrar-sesion','LoginController::cerrarSesion');
 
 $routes->get('/veterinario','Veterinario::index');
 $routes->post('/veterinario/guardar','Veterinario::guardar');

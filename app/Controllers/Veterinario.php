@@ -15,6 +15,14 @@ class Veterinario extends BaseController
 
  public function index()
 {
+
+    if (!session()->has('usuario')) {
+        return redirect()->to('/login')->with('mensajeError','Debe iniciar sesion');
+    }
+    if (session('rol') != 2) {
+        return redirect()->to('/login')->with('mensajeError','Permisos insuficientes');
+    }
+
     $propModel = new PropietarioModel();
     $mascModel = new MascotaModel();
 
