@@ -94,9 +94,17 @@
         .restablecer:hover {
             text-decoration: underline;
         }
+
+        .alert{
+            color:red;
+            background: rgba(253, 97, 97, 0.63);
+            padding:5px 10px;
+            border-radius:10px;
+        }
+
         footer {
             position: fixed;
-            bottom: 10px;
+            bottom: 0;
             width: 100%;
             text-align: center;
             color: #111010;
@@ -127,6 +135,9 @@
                 <input type="password" id="password" name="password" required>
             </div>
           
+            <?php if(session('error')): ?>
+                <div class="alert"><?= session('error'); ?></div>
+            <?php endif;?>
 
             <div class="botones">
                 <button type="submit" class="boton-ingreso"><strong>Ingresar</strong></button>

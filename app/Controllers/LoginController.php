@@ -35,7 +35,7 @@ class LoginController extends BaseController {
                 break;
             }
         }else{
-            return redirect()->to('/login');
+            return redirect()->back()->with('error','Credenciales Incorrectas');
         };
        
 
