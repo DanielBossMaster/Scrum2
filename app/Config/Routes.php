@@ -24,6 +24,7 @@ $routes->get('/propietario', 'Propietario::index');
 $routes->get('/propietario/editar/(:num)', 'Propietario::editar/$1');
 $routes->post('/propietario/actualizar/(:num)', 'Propietario::actualizar/$1');
 $routes->get('/propietario/imprimir/(:num)', 'Propietario::imprimir_historia/$1');
+$routes->get('/propietario/exportar-mascotas/(:num)', 'Propietario::exportarExcelMascotas/$1');
 $routes->get('/propietario/crearMascota', 'Propietario::crearMascota');
 $routes->post('/propietario/guardarMascota', 'Propietario::guardarMascota');
 $routes->get('/propietario/eliminarMascota/(:num)', 'Propietario::eliminarMascota/$1');
