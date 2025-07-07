@@ -54,7 +54,7 @@
       color: #5e2286;
     }
 
-    form input, form textarea, form select, form button , form a{
+    form input, form textarea, form select, form button {
       display: block;
       width: 100%;
       padding: 8px;
@@ -98,8 +98,8 @@
     <div class="container">
     <div class="fila">
     <section>
-      <h2> Pacientes</h2>
-      <h3>Actualizar informacion de dueño o mascota</h3>
+      <h2> Mascotas</h2>
+      <h3>Actualizar mascota</h3>
       <form method="post" action="<?php echo base_url('/mascota/actualizar/'.$mascota['id_mascota']);?>">
         <label ><strong>Nombre</strong></label>
         <input type="text" name="nom_mascota" value= <?= $mascota['nom_mascota'];?> readonly >
@@ -119,7 +119,8 @@
         <input type="date" name="fecha_vacunacion" value= <?= $mascota['fecha_vacunacion'];?>  >
         <label ><strong>Medicamento</strong></label>
         <input type="text" name="medicamento" value= <?= $mascota['medicamento'];?>  >
-        <button>Actualizar informacion Propietario</button>
+        <button>Actualizar informacion de mascota</button>
+        <button><a href="<?php echo base_url('/veterinario/eliminar/'.$mascota['id_mascota']) ?>">Eliminar Mascota</a></button>
         </form>
    
 </div>

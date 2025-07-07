@@ -16,15 +16,16 @@ $routes->post('/veterinario/guardar','Veterinario::guardar');
 $routes->post('/veterinario/guardar_mascota', 'Mascota::guardar');
 $routes->get('/veterinario/editar/(:num)','Veterinario::editar/$1');
 
-$routes->get('/veterinario/eliminar/(:num)','Veterinario::eliminar/$1');
+$routes->get('/veterinario/eliminar/(:num)','Mascota::eliminar/$1');
+$routes->get('/propietario/eliminar/(:num)','Veterinario::eliminar/$1');
 
 $routes->post('/historiaClinica/(:num)','HistoriaClinica::index/$1');
 
 $routes->post('/mascota/actualizar/(:num)', 'Mascota::actualizar/$1');
-$routes->get('/mascota/eliminar/(:num)','Mascota::eliminar/$1');
+
 $routes->get('/veterinario/busqueda','Veterinario::buscar');
 $routes->get('/mascota/editar_mascota/(:num)','Mascota::editar/$1');
-$routes->post('/veterinario/actualizar/(:num)','Mascota::actualizar/$1');
+$routes->post('/veterinario/actualizar/(:num)','Veterinario::actualizar/$1');
 
 $routes->get('/propietario', 'Propietario::index');
 $routes->get('/propietario/editar/(:num)', 'Propietario::editar/$1');

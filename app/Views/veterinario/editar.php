@@ -74,6 +74,9 @@
       text-size-adjust: 18xp; 
       text-align: center;
     }
+     button:hover {
+      background-color: #4e116d;
+    }
 
     footer {
       text-align: center;
@@ -98,8 +101,8 @@
     <div class="container">
     <div class="fila">
     <section>
-      <h2> Pacientes</h2>
-      <h3>Actualizar informacion de dueño o mascota</h3>
+      <h2> Propietarios</h2>
+      <h3>Actualizar informacion de dueño</h3>
       <form method="post" action="<?php echo base_url('/veterinario/actualizar/'.$propietario['num_doc']);?>">
         <label ><strong>Numero de Documento</strong></label>
         <input type="text" name="num_doc" value= <?= $propietario['num_doc'];?> readonly >

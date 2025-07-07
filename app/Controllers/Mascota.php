@@ -37,6 +37,9 @@ public function editar($id)
         return redirect()->to('/veterinario');
     }
 
+
+    
+
 public function actualizar($id)
 {
     $model = new MascotaModel();

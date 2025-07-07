@@ -58,11 +58,12 @@
     }
 
     .cliente {
-      background-color: #c794e0;
+      background: rgb(248, 244, 250);
+      box-shadow: 2px 2px 10px rgba(150, 146, 149, 0.856);
       padding: 20px;
       border-radius: 15px;
       width: 300px;
-      box-shadow: 2px 2px 5px #b182cb;
+      
     }
 
     .cliente h3 {
@@ -78,6 +79,7 @@
       width: 100%;
       border-radius: 8px;
       cursor: pointer;
+      font-weight: bold;
     }
 
     .cliente button:hover {
@@ -91,6 +93,7 @@
       <img src="<?= base_url('/img/logo.png') ?>" alt="logo">
     </div>
     <nav class="links">
+      <a href="<?= base_url('veterinario') ?>">Inicio</a>
       <a href="<?= base_url('veterinario/busqueda') ?>">Mascotas</a>
       <a href="<?= base_url('cerrar-sesion') ?>">Cerrar sesión</a>
     </nav>
@@ -101,7 +104,8 @@
       <input type="search" name="q" placeholder="Buscar por nombre, especie, color, documento, etc..." value="<?= esc($q ?? '') ?>">
     </form>
   </div>
-
+<div class="container">
+  <div class="fila">
   <main class="clientes">
     <?php if (!empty($resultados)): ?>
       <?php foreach ($resultados as $item): ?>
@@ -123,6 +127,9 @@
           <form method="get" action="<?= base_url('veterinario/editar/' . $item->num_doc) ?>">
             <button type="submit"> Editar Propietario</button>
           </form>
+          <form method="get" action="<?= base_url('propietario/eliminar/' . $item->num_doc) ?>">
+            <button type="submit"> Eliminar Propietario</button>
+          </form>
 
           <form method="get" action="<?= base_url('mascota/editar_mascota/' . $item->id_mascota) ?>">
             <button type="submit"> Editar Mascota</button>
@@ -137,5 +144,7 @@
       <p style="text-align:center; font-size: 18px; color: #6a1b9a;">No se encontraron resultados.</p>
     <?php endif; ?>
   </main>
+ </div>  
+</div>
 </body>
 </html>

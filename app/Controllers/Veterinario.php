@@ -20,7 +20,7 @@ class Veterinario extends BaseController
     $db = \Config\Database::connect(); // ← conexión a la base de datos
     $builder = $db->table('propietario');
     $builder->select('propietario.*, mascota.id_mascota, mascota.nom_mascota, mascota.especie, mascota.color, mascota.nom_vacuna, mascota.fecha_vacunacion, mascota.medicamento');
-    $builder->join('mascota', 'mascota.num_propietario = propietario.num_doc');
+    $builder->join('mascota', 'mascota.num_propietario = propietario.num_doc','left');
 
     if (!empty($q)) {
         $builder->groupStart()

@@ -37,7 +37,19 @@
    margin-top: 5px;
    gap: 30px;
   }
+  
+  .horizontal{ 
+   box-sizing: border-box;
+   background: rgb(248, 244, 250);
+   box-shadow: 2px 2px 10px rgba(150, 146, 149, 0.856);
+   border-radius: 10px;
+   padding: 30px;      
+   gap: 30px;
+   flex: 1 1 90%;
+   max-width: 1000px;
+   margin: 30px auto;
 
+  }
    .container {
    max-width: 900px;
    margin: 40px auto;
@@ -52,18 +64,7 @@
    justify-content: center;
    margin-bottom: 30px;
   }
-   .horizontal{ 
-   box-sizing: border-box;
-   background: rgb(248, 244, 250);
-   box-shadow: 2px 2px 10px rgba(150, 146, 149, 0.856);
-   border-radius: 10px;
-   padding: 30px;      
-   gap: 30px;
-   flex: 1 1 90%;
-   max-width: 1000px;
-   margin: 30px auto;
-
-  }
+   
 
    .fila section {
    flex: 0 0 48%;
