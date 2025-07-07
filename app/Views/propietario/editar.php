@@ -84,7 +84,7 @@
 </head>
 <header>
   <nav class="logo">
-    <img src="logo.png" alt="logo">
+    <img src="<?=base_url("/img/logo.png")?>" alt="logo">
   </nav>
   <nav class="links">
     <a href="login.html">Cerrar sesión</a>
@@ -94,36 +94,29 @@
 <body>
     <div class="container">
     <div class="fila">
-    <section>
-      <h2> Pacientes</h2>
-      <h3>Actualizar informacion de dueño o mascota</h3>
-      <form method="post" action="<?php echo base_url('/propietario/actualizar/'.$propietario['num_doc']);?>">
-        <label ><strong>Numero de Documento</strong></label>
-        <input type="text" name="num_doc" value= <?= $propietario['num_doc'];?>>
-        <label ><strong>Nombre </strong></label>
-        <input type="text" name="nombre_pro" value= <?= $propietario['nombre_pro'];?>  >
-        <label ><strong>Apellido</strong></label>
-        <input type="text" name="apellido_pro" value= <?= $propietario['apellido_pro'];?>  >
-        <label ><strong>Direccion</strong></label>
-        <input type="text" name="direccion_pro" value= <?= $propietario['direccion_pro'];?>  >
-        <label ><strong>Telefono</strong></label>
-        <input type="text" name="telefono_pro" value= <?= $propietario['telefono_pro'];?>  >
-        <label ><strong>Correo</strong></label>
-        <input type="text" name="correo_pro" value= <?= $propietario['correo_pro'];?>  >
-        <button>Actualizar informacion Propietario</button>
-        </form>
-     <form method="post" action="<?= base_url('/mascota/actualizar/' . $mascota['id_mascota']) ?>">
-        <label ><strong>Nombre </strong></label>
-        <input type="text" name="nom_mascota" value= <?= $mascota['nom_mascota'];?>  >
-        <label ><strong>Fecha Vacunacion</strong></label>
-        <input type="date" name="fecha_vacunacion" value= <?= $mascota['fecha_vacunacion'];?>  >
-        <label ><strong>Nombre de Vacuna</strong></label>
-        <input type="text" name="nom_vacuna" value= <?= $mascota['nom_vacuna'];?>  >
-        <label ><strong>Medicamento</strong></label>
-        <input type="text" name="medicamento" value= <?= $mascota['medicamento'];?>  >
-        <button>Actualizar informacion Mascota</button>
-        <strong><a href="<?php echo base_url('/mascota/eliminar/'.$mascota['id_mascota']); ?>">Borrar Mascota</a></strong>
-      </form>
+    <div class="container" >
+        <h2>Bienvenido  </h2>
+
+        <button class="button" > Datos del Propietario</button>
+       
+            <div class="info-box" id="datosPropietario">
+                
+                <p><strong>Documento</strong> <?= esc($propietario['num_doc']); ?></p>
+                <p><strong>Nombre:</strong> <?= esc($propietario['nombre_pro']); ?></p>
+                <p><strong>Dirección:</strong> <?= esc($propietario['direccion_pro']); ?></p>
+                <p><strong>Teléfono:</strong> <?= esc($propietario['telefono_pro']); ?></p>
+                <p><strong>Correo:</strong> <?= esc($propietario['telefono_pro']); ?></p>
+            </div>
+          
+            <form action="<?= base_url('/propietario/actualizar/' . $propietario['num_doc']) ?>" method="post" class="formulario">
+                <input type="text" name="nombre_pro" value="<?= esc($propietario['nombre_pro']) ?>" placeholder="Nombre completo" required>
+                <input type="text" name="direccion_pro" value="<?= esc($propietario['direccion_pro']) ?>" placeholder="Dirección" required>
+                <input type="text" name="telefono_pro" value="<?= esc($propietario['telefono_pro']) ?>" placeholder="Teléfono" required>
+                <input type="email" name="correo_pro" value="<?= esc($propietario['correo_pro']) ?>" placeholder="Correo electrónico" required>
+                <button type="submit">Guardar Cambios</button>
+            </from>
+                
+        </div>
 </div>
 </div>
 </body>

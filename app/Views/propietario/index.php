@@ -137,7 +137,8 @@ nav {
 
    <header>
      <div class="logo">
-        <img src="img/logo.png" title="logo" alt="logo">
+           <img src="<?=base_url("/img/logo.png")?>" alt="logo">
+
     </div>
     <nav class="links">  
         <a href="error404.html">Comprar</a> 
@@ -146,6 +147,8 @@ nav {
         <a href="<?= base_url('cerrar-sesion') ?>" title="login">Cerrar sesion </a>    
     </nav>
 </header>
+
+<!-- Esta es la primera -->
     <div class="container" >
         <h2>Bienvenido  </h2>
 
@@ -158,17 +161,10 @@ nav {
                 <p><strong>Dirección:</strong> <?= esc($propietario['direccion_pro']); ?></p>
                 <p><strong>Teléfono:</strong> <?= esc($propietario['telefono_pro']); ?></p>
             </div>
-          
-            <button <?php echo base_url('/propietario/editar');?> > Actualizar Datos</button>
-            <div id="formularioEditar" class="formulario" style="display: none;">
-                <input type="text" id="tipoDoc" placeholder="Tipo de Documento">
-                <input type="text" id="numeroDoc" placeholder="Número de Documento">
-                <input type="text" id="nombre" placeholder="Nombre Completo">
-                <input type="text" id="direccion" placeholder="Dirección">
-                <input type="text" id="telefono" placeholder="Teléfono">
-                <button> Guardar</button>
-            </div>
-        </div>
+            <a href="<?= base_url('/propietario/editar/'.$propietario['num_doc']) ?>">Actuaizar Datos</a>
+            <a href="<?= base_url('/propietario/exportar-mascotas/'.$propietario['num_doc']) ?>">Exportar Mascotas</a>
+
+
 
         <button class="button"> Mascotas</button>
         
@@ -188,6 +184,12 @@ nav {
                 <a href="<?= base_url('/propietario/imprimir/' . $propietario['num_doc']) ?>">
                     <button class="btn-secundario"> Imprimir Historia</button>
                 </a>
+            <a href="<?= base_url('/propietario/editarMascota/' . $mascota['id_mascota']) ?>">
+                <button class="btn-secundario">Editar</button>
+            </a>
+            <form action="<?= base_url('/propietario/eliminarMascota/' . $mascota['id_mascota']) ?>" method="post" onsubmit="return confirm('¿Estás seguro de eliminar esta mascota?')">
+                <button type="submit" class="btn-secundario">Eliminar</button>
+            </form>                   
             </div>
         </div>
     <?php endforeach; ?>
@@ -199,7 +201,7 @@ nav {
         </div>
     </div>
 
-    <!-- Contenedor invisible para imprimir PDF -->
+    <!-- Contenedor no lo veo  para imprimir PDF -->
     <div id="print-area" style="display: none;"></div>
 
     <footer>
