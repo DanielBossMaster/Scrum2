@@ -6,8 +6,8 @@ use CodeIgniter\Model;
 
 class UsuarioModel extends Model {
     protected $table = 'usuario';
-    protected $prymaryKey = 'id_usu';
-    protected $allowedFields = ['id_usu', 'nombre_usu', 'pass_usu', 'rol_id ', 'propietario_id', 'veterinario_id'];
+    protected $primaryKey = 'id_usu';
+    protected $allowedFields = ['id_usu', 'nombre_usu', 'pass_usu', 'rol_id', 'propietario_id', 'veterinario_id'];
     public $timestamps = false;
 
 

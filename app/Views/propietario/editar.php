@@ -97,9 +97,9 @@
     <section>
       <h2> Pacientes</h2>
       <h3>Actualizar informacion de dueño o mascota</h3>
-      <form method="post" action="<?php echo base_url('/veterinario/actualizar/'.$propietario['num_doc']);?>">
+      <form method="post" action="<?php echo base_url('/propietario/actualizar/'.$propietario['num_doc']);?>">
         <label ><strong>Numero de Documento</strong></label>
-        <input type="text" name="num_doc" value= <?= $propietario['num_doc'];?>  readonly >
+        <input type="text" name="num_doc" value= <?= $propietario['num_doc'];?>>
         <label ><strong>Nombre </strong></label>
         <input type="text" name="nombre_pro" value= <?= $propietario['nombre_pro'];?>  >
         <label ><strong>Apellido</strong></label>

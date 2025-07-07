@@ -25,9 +25,10 @@ class LoginController extends BaseController {
 
             session()->set('usuario', $usuarioEncontrado['nombre_usu']);
             session()->set('rol', $usuarioEncontrado['rol_id']);
-
+            
             switch ($usuarioEncontrado["rol_id"]) {
                 case '5':
+                    session()->set('id_propietario', $usuarioEncontrado['propietario_id']);
                     return redirect()->to('/propietario');
                 break;
                 case '2':

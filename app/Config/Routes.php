@@ -18,10 +18,12 @@ $routes->get('/veterinario/editar/(:num)','Veterinario::editar/$1');
 $routes->post('/veterinario/actualizar/(:num)','Veterinario::actualizar/$1');
 $routes->get('/veterinario/eliminar/(:num)','Veterinario::eliminar/$1');
 $routes->get('/mascota/eliminar/(:num)','Mascota::eliminar/$1');
-$routes->get('/propietario','Propietario::index');
-$routes->get('/propietario/crear', 'Propietario::crear');
-$routes->post('/propietario/guardar', 'Propietario::guardar');
-$routes->get('/propietario/editar/(:num)', 'Propietario::editar/$1');
-$routes->get('/propietario/eliminar/(:num)', 'Propietario::eliminar/$1');
-$routes->get('/propietario/imprimir/(:num)', 'Propietario::imprimir_historia/$1');
 $routes->post('/mascota/actualizar/(:num)', 'Mascota::actualizar/$1');
+
+$routes->get('/propietario', 'Propietario::index');
+$routes->get('/propietario/editar/(:num)', 'Propietario::editar/$1');
+$routes->post('/propietario/actualizar/(:num)', 'Propietario::actualizar/$1');
+$routes->get('/propietario/imprimir/(:num)', 'Propietario::imprimir_historia/$1');
+$routes->get('/propietario/crearMascota', 'Propietario::crearMascota');
+$routes->post('/propietario/guardarMascota', 'Propietario::guardarMascota');
+$routes->get('/propietario/eliminarMascota/(:num)', 'Propietario::eliminarMascota/$1');

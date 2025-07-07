@@ -119,7 +119,7 @@ nav {
         
         .historia {
             font-size: 14px;
-            display: none;
+            color: #000;
         }
         
         footer {
@@ -148,17 +148,17 @@ nav {
 </header>
     <div class="container" >
         <h2>Bienvenido  </h2>
-<?php foreach ($propietario as $prop): ?>
+
         <button class="button" > Datos del Propietario</button>
        
             <div class="info-box" id="datosPropietario">
                 
-                <p><strong>Documento</strong> <?= esc($prop['num_doc']); ?></p>
-                <p><strong>Nombre:</strong> <?= esc($prop['nombre_pro']); ?></p>
-                <p><strong>Dirección:</strong> <?= esc($prop['direccion_pro']); ?></p>
-                <p><strong>Teléfono:</strong> <?= esc($prop['telefono_pro']); ?></p>
+                <p><strong>Documento</strong> <?= esc($propietario['num_doc']); ?></p>
+                <p><strong>Nombre:</strong> <?= esc($propietario['nombre_pro']); ?></p>
+                <p><strong>Dirección:</strong> <?= esc($propietario['direccion_pro']); ?></p>
+                <p><strong>Teléfono:</strong> <?= esc($propietario['telefono_pro']); ?></p>
             </div>
-            <?php endforeach; ?>
+          
             <button <?php echo base_url('/propietario/editar');?> > Actualizar Datos</button>
             <div id="formularioEditar" class="formulario" style="display: none;">
                 <input type="text" id="tipoDoc" placeholder="Tipo de Documento">
@@ -173,50 +173,28 @@ nav {
         <button class="button"> Mascotas</button>
         
 
-            <!-- Mascota Sara -->
-            <div class="mascota">
-                <h4> Sara</h4>
-                <button class="btn-secundario"> Historia Clínica</button>
-                <div id="historia-sara" class="historia">
-                    <p><strong>Raza:</strong> Labrador</p>
-                    <p><strong>Color:</strong> Negro</p>
-                    <p><strong>Edad:</strong> 5 años</p>
-                    <p><strong>Fecha de Vacunación:</strong> 2024-12-01</p>
-                    <p><strong>Vacuna Aplicada:</strong> Rabia</p>
-                    <p><strong>Medicamentos:</strong> Antibióticos (abril 2024)</p>
-                    <button class="btn-secundario" > Imprimir Historia</button>
-                </div>
-            </div>
-
-            <!-- Mascota Max -->
-            <div class="mascota">
-                <h4> Max</h4>
-                <button class="btn-secundario"> Historia Clínica</button>
-                <div id="historia-max" class="historia">
-                    <p><strong>Raza:</strong> Schnauzer</p>
-                    <p><strong>Color:</strong> Negro</p>
-                    <p><strong>Edad:</strong> 6 meses</p>
-                    <p><strong>Fecha de Vacunación:</strong> 2024-12-01</p>
-                    <p><strong>Vacuna Aplicada:</strong> Rabia</p>
-                    <p><strong>Medicamentos:</strong> Antibióticos (abril 2024)</p>
+            <?php if (!empty($mascotas)): ?>
+    <?php foreach ($mascotas as $mascota): ?>
+        <div class="mascota">
+            <h4><?= esc($mascota['nom_mascota']); ?></h4>
+            <button class="btn-secundario"> Historia Clínica</button>
+            <div class="historia">
+                <p><strong>Raza:</strong> <?= esc($mascota['raza']); ?></p>
+                <p><strong>Color:</strong> <?= esc($mascota['color']); ?></p>
+                <p><strong>Edad:</strong> <?= esc($mascota['fecha_nacimiento']); ?></p>
+                <p><strong>Fecha de Vacunación:</strong> <?= esc($mascota['fecha_vacunacion']); ?></p>
+                <p><strong>Vacuna Aplicada:</strong> <?= esc($mascota['nom_vacuna']); ?></p>
+                <p><strong>Medicamentos:</strong> <?= esc($mascota['medicamento']); ?></p>
+                <a href="<?= base_url('/propietario/imprimir/' . $propietario['num_doc']) ?>">
                     <button class="btn-secundario"> Imprimir Historia</button>
-                </div>
+                </a>
             </div>
+        </div>
+    <?php endforeach; ?>
+<?php else: ?>
+    <p style="color:#4A148C; text-align:center;">No tienes mascotas registradas.</p>
+<?php endif; ?>
 
-            <!-- Mascota Hanna -->
-            <div class="mascota">
-                <h4> Hanna</h4>
-                <button class="btn-secundario"> Historia Clínica</button>
-                <div id="historia-hanna" class="historia">
-                    <p><strong>Raza:</strong> Atigrada</p>
-                    <p><strong>Color:</strong> Blanco, gris y naranja</p>
-                    <p><strong>Edad:</strong> 6 meses</p>
-                    <p><strong>Fecha de Vacunación:</strong> 2025-01-15</p>
-                    <p><strong>Vacuna Aplicada:</strong> Moquillo</p>
-                    <p><strong>Medicamentos:</strong> Ninguno</p>
-                    <button class="btn-secundario"> Imprimir Historia</button>
-                </div>
-            </div>
 
         </div>
     </div>
