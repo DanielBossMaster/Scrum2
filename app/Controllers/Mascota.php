@@ -24,7 +24,7 @@ public function editar($id)
     {
         $model = new MascotaModel();
         $data['mascota'] = $model->find($id);
-        return view('veterinario', $data);
+        return view('veterinario/editar_mascota', $data);
 
         
     }

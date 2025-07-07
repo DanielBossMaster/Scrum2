@@ -100,19 +100,25 @@
     <section>
       <h2> Pacientes</h2>
       <h3>Actualizar informacion de dueño o mascota</h3>
-      <form method="post" action="<?php echo base_url('/veterinario/actualizar/'.$propietario['num_doc']);?>">
-        <label ><strong>Numero de Documento</strong></label>
-        <input type="text" name="num_doc" value= <?= $propietario['num_doc'];?> readonly >
+      <form method="post" action="<?php echo base_url('/mascota/actualizar/'.$mascota['id_mascota']);?>">
+        <label ><strong>Nombre</strong></label>
+        <input type="text" name="nom_mascota" value= <?= $mascota['nom_mascota'];?> readonly >
         <label ><strong>Nombre </strong></label>
-        <input type="text" name="nombre_pro" value= <?= $propietario['nombre_pro'];?>  >
-        <label ><strong>Apellido</strong></label>
-        <input type="text" name="apellido_pro" value= <?= $propietario['apellido_pro'];?>  >
-        <label ><strong>Direccion</strong></label>
-        <input type="text" name="direccion_pro" value= <?= $propietario['direccion_pro'];?>  >
-        <label ><strong>Telefono</strong></label>
-        <input type="text" name="telefono_pro" value= <?= $propietario['telefono_pro'];?>  >
-        <label ><strong>Correo</strong></label>
-        <input type="text" name="correo_pro" value= <?= $propietario['correo_pro'];?>  >
+        <input type="text" name="especie" value= <?= $mascota['especie'];?>readonly  >
+        <label ><strong>Raza</strong></label>
+        <input type="text" name="raza" value= <?= $mascota['raza'];?>readonly  >
+        <label ><strong>Fecha de Nacimiento</strong></label>
+        <input type="text" name="fecha_nacimiento" value= <?= $mascota['fecha_nacimiento'];?>  readonly>
+        <label ><strong>color</strong></label>
+        <input type="text" name="color" value= <?= $mascota['color'];?>  readonly>
+        <label ><strong>Genero</strong></label>
+        <input type="text" name="genero" value= <?= $mascota['genero'];?> readonly >
+        <label ><strong>Vacuna</strong></label>
+        <input type="text" name="nom_vacuna" value= <?= $mascota['nom_vacuna'];?>  >
+        <label ><strong>Fecha de Vacunacion</strong></label>
+        <input type="date" name="fecha_vacunacion" value= <?= $mascota['fecha_vacunacion'];?>  >
+        <label ><strong>Medicamento</strong></label>
+        <input type="text" name="medicamento" value= <?= $mascota['medicamento'];?>  >
         <button>Actualizar informacion Propietario</button>
         </form>
    

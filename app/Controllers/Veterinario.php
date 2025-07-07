@@ -13,6 +13,37 @@ class Veterinario extends BaseController
 
 
 
+ public function buscar()
+{
+    $q = $this->request->getGet('q'); // valor del campo de búsqueda
+
+    $db = \Config\Database::connect(); // ← conexión a la base de datos
+    $builder = $db->table('propietario');
+    $builder->select('propietario.*, mascota.id_mascota, mascota.nom_mascota, mascota.especie, mascota.color, mascota.nom_vacuna, mascota.fecha_vacunacion, mascota.medicamento');
+    $builder->join('mascota', 'mascota.num_propietario = propietario.num_doc');
+
+    if (!empty($q)) {
+        $builder->groupStart()
+            ->like('propietario.nombre_pro', $q)
+            ->orLike('propietario.apellido_pro', $q)
+            ->orLike('propietario.num_doc', $q)
+            ->orLike('mascota.nom_mascota', $q)
+            ->orLike('mascota.especie', $q)
+            ->orLike('mascota.color', $q)
+            ->orLike('mascota.nom_vacuna', $q)
+            ->orLike('mascota.fecha_vacunacion', $q)
+            ->orLike('mascota.medicamento', $q)
+            ->groupEnd();
+    }
+
+    $query = $builder->get();
+    $data['resultados'] = $query->getResult();
+
+    return view('veterinario/busqueda', $data);
+}
+
+
+
  public function index()
 {
 
@@ -37,16 +68,7 @@ class Veterinario extends BaseController
 public function editar($num_doc)
 {
     $propModel = new \App\Models\PropietarioModel();
-    $mascModel = new \App\Models\MascotaModel();
-
-    // Buscar propietario
     $data['propietario'] = $propModel->find($num_doc);
-
-    // Buscar mascota (si hay una asociada)
-    $data['mascota'] = $mascModel
-        ->where('num_propietario', $num_doc)
-        ->first(); // Si tienes varias, luego vemos cómo mostrarlas
-
     return view('veterinario/editar', $data);
 }
 
