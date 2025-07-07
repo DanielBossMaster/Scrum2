@@ -67,6 +67,7 @@ nav {
             border-radius: 10px;
             font-size: 16px;
             cursor: pointer;
+            font-weight: bold;
         }
         
         .button:hover {
@@ -107,7 +108,7 @@ nav {
             border: 1px solid #ccc;
         }
         
-        .formulario button {
+        .formulario button  {
             background-color: #6A1B9A;
             color: white;
             border: none;
@@ -116,6 +117,13 @@ nav {
             cursor: pointer;
             width: 100%;
         }
+        
+        .button a{
+           text-decoration: none;
+           color: #e6d8d8;
+           font-weight: bold;
+
+        }    
         
         .historia {
             font-size: 14px;
@@ -161,8 +169,8 @@ nav {
                 <p><strong>Dirección:</strong> <?= esc($propietario['direccion_pro']); ?></p>
                 <p><strong>Teléfono:</strong> <?= esc($propietario['telefono_pro']); ?></p>
             </div>
-            <a href="<?= base_url('/propietario/editar/'.$propietario['num_doc']) ?>">Actuaizar Datos</a>
-            <a href="<?= base_url('/propietario/exportar-mascotas/'.$propietario['num_doc']) ?>">Exportar Mascotas</a>
+       <button class="button" >  <a href="<?= base_url('/propietario/editar/'.$propietario['num_doc']) ?>">Actuaizar Datos</a></button>
+       <button class="button" >  <a href="<?= base_url('/propietario/exportar-mascotas/'.$propietario['num_doc']) ?>">Exportar Mascotas</a></button>
 
 
 

@@ -103,14 +103,14 @@
       <form method="post" action="<?php echo base_url('/mascota/actualizar/'.$mascota['id_mascota']);?>">
         <label ><strong>Nombre</strong></label>
         <input type="text" name="nom_mascota" value= <?= $mascota['nom_mascota'];?> readonly >
-        <label ><strong>Nombre </strong></label>
-        <input type="text" name="especie" value= <?= $mascota['especie'];?>readonly  >
+        <label ><strong>Especie </strong></label>
+        <input type="text" name="especie" value= <?= $mascota['especie'];?> readonly  >
         <label ><strong>Raza</strong></label>
-        <input type="text" name="raza" value= <?= $mascota['raza'];?>readonly  >
+        <input type="text" name="raza" value= <?= $mascota['raza'];?> readonly  >
         <label ><strong>Fecha de Nacimiento</strong></label>
-        <input type="text" name="fecha_nacimiento" value= <?= $mascota['fecha_nacimiento'];?>  readonly>
+        <input type="text" name="fecha_nacimiento" value= <?= $mascota['fecha_nacimiento'];?>  readonly >
         <label ><strong>color</strong></label>
-        <input type="text" name="color" value= <?= $mascota['color'];?>  readonly>
+        <input type="text" name="color" value= <?= $mascota['color'];?>  readonly >
         <label ><strong>Genero</strong></label>
         <input type="text" name="genero" value= <?= $mascota['genero'];?> readonly >
         <label ><strong>Vacuna</strong></label>
