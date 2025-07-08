@@ -144,7 +144,8 @@
             </div>
         </form>
         <div class="botones">
-            <button type="submit" class="boton-registro"><strong>Registrarse</strong></button>
+            <a href="<?=base_url('registro') ?>" class="boton-registro"><strong>Registrarse</strong></a>
+            
         </div>
         <a href="#" class="restablecer">¿Olvidaste tu contraseña?</a>
     </div>
