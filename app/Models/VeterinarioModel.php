@@ -7,8 +7,8 @@ class VeterinarioModel extends Model
 {
 
 protected $table = 'veterinario';
-protected $primaryKey ='num_licencia';
-protected $allowedFields =['num_licencia','nombre_vete','apellido_vete','direccion_vete','	telefono_vete','correo_vete'];
+protected $primaryKey ='id_veterinario';
+protected $allowedFields =['id_veterinario','num_licencia','nombre_vete','apellido_vete','direccion_vete','	telefono_vete','correo_vete'];
 public $Timestamps = false;
 }
 
