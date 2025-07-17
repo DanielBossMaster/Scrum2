@@ -38,7 +38,7 @@ public function editar($id)
     }
 
 
-    
+
 
 public function actualizar($id)
 {

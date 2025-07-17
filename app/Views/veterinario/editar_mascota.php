@@ -102,8 +102,10 @@
       <h3>Actualizar mascota</h3>
       <form method="post" action="<?php echo base_url('/mascota/actualizar/'.$mascota['id_mascota']);?>">
         <label ><strong>Nombre</strong></label>
+
         <input type="text" name="nom_mascota" value= <?= $mascota['nom_mascota'];?> >
         <label ><strong>Nombre </strong></label>
+
         <input type="text" name="especie" value= <?= $mascota['especie'];?>>
         <label ><strong>Raza</strong></label>
         <input type="text" name="raza" value= <?= $mascota['raza'];?>>
@@ -114,7 +116,7 @@
         <label ><strong>Genero</strong></label>
         <input type="text" name="genero" value= <?= $mascota['genero'];?>>
         <label ><strong>Vacuna</strong></label>
-        <input type="text" name="nom_vacuna" value= <?= $mascota['nom_vacuna'];?>  >
+        <input type="text" name="nom_vacuna" value= <?= $mascota['nom_vacuna'];?>>
         <label ><strong>Fecha de Vacunacion</strong></label>
         <input type="date" name="fecha_vacunacion" value= <?= $mascota['fecha_vacunacion'];?>  >
         <label ><strong>Medicamento</strong></label>
