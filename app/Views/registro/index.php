@@ -94,82 +94,76 @@
         color: black;
     }
   </style>
-</head>
- <header>
-  <nav class="logo">
-    <img src="logo.png" alt="logo">
-  </nav>
-  <nav class="links">
-    <a href="formulario.html">Registrar Mascota</a>
-    <a href="login.html">Cerrar sesión</a>
-  </nav>
-</header>
+    </head>
+      <header>
+      <div class="logo">
+       <img src="<?= base_url('/img/logo.png') ?>" alt="logo">
+      </div>
+    <nav class="links">
+    <a href="<?= base_url('cerrar-sesion') ?>">Cerrar sesión</a>
+    </nav>
+    </header>
 <body>
    
 
   <div class="form-container">
     <h2>Registro de Usuario</h2>
-    <form id="registroForm">
+    <form id="registroForm" method="post" action="<?= base_url('registro/registrar') ?>">
+              <label for="usuario">Usuario</label>
+              <input type="text" id="usuario" name="usuario" required>
 
-      <!-- Campos comunes -->
+              <label for="password">Contraseña</label>
+              <input type="password" id="password" name="password" required>
 
-      <label for="nombre">Usuario</label>
-      <input type="text" id="usuario" name="usurio" required>
+              <label for="rol">Selecciona tu rol:</label>
+        <select id="rol" name="rol" required onchange="mostrarCamposAdicionales()">
+              <option value="">-- Selecciona --</option>
+              <option value="propietario">Propietario</option>
+              <option value="veterinario">Veterinario</option>
+        </select>
 
-      <label for="password">Contraseña</label>
-      <input type="password" id="password" name="password" required>
-
-      <label for="rol">Selecciona tu rol:</label>
-      <select id="rol" name="rol" required onchange="mostrarCamposAdicionales()">
-        <option value="">-- Selecciona --</option>
-        <option value="propietario">Propietario</option>
-        <option value="veterinario">Veterinario</option>
-       </select>
-
-      <!-- Propietario -->
+        <!-- Propietario -->
       <div id="camposPropietario" class="hidden">
-        <label for="tipoDocumento">Tipo de Documento:</label>
-        <input type="text" id="tipoDocumento" name="tipoDocumento">
+        
 
         <label for="num_doc">Número de Documento:</label>
         <input type="text" id="num_doc" name="num_doc">
 
-	<label for="nombre">Nombre:</label>
+        <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre">
 
-	<label for="apellido">Apellido:</label>
+        <label for="apellido">Apellido:</label>
         <input type="text" id="apellido" name="apellido">
 
-	<label for="direccion">Dirección:</label>
+        <label for="direccion">Dirección:</label>
         <input type="text" id="direccion" name="direccion">
 
-	<label for="telefono">Teléfono:</label>
+        <label for="telefono">Teléfono:</label>
         <input type="tel" id="telefono" name="telefono">
 
-	<label for="correo">Correo:</label>
+        <label for="correo">Correo:</label>
         <input type="text" id="correo" name="correo">
       </div>
 
       <!-- Veterinario -->
       <div id="camposVeterinario" class="hidden">
-        <label for="licencia">Número de licencia profesional</label>
-        <input type="text" id="licencia" name="licencia">
+       <label for="licencia">Número de licencia profesional</label>
+       <input type="text" id="licencia" name="licencia" required>
 
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre">
+       <label for="nombre_vete">Nombre:</label>
+       <input type="text" id="nombre_vete" name="nombre_vete">
 
-	<label for="apellido">Apellido:</label>
-        <input type="text" id="apellido" name="apellido">
+        <label for="apellido_vete">Apellido:</label>
+        <input type="text" id="apellido_vete" name="apellido_vete">
 
-	<label for="direccion">Dirección:</label>
-        <input type="text" id="direccion" name="direccion">
+        <label for="direccion_vete">Dirección:</label>
+        <input type="text" id="direccion_vete" name="direccion_vete">
 
-	<label for="telefono">Teléfono:</label>
-        <input type="tel" id="telefono" name="telefono">
+        <label for="telefono_vete">Teléfono:</label>
+        <input type="tel" id="telefono_vete" name="telefono_vete">
 
-	<label for="correo">Correo:</label>
-        <input type="text" id="correo" name="correo">
-
+        <label for="correo_vete">Correo:</label>
+        <input type="text" id="correo_vete" name="correo_vete">
       </div>
 
       <button type="submit">Registrarse</button>

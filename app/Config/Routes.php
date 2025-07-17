@@ -12,6 +12,8 @@ $routes->post('/login/acceder','LoginController::iniciarSesion');
 $routes->get('/cerrar-sesion','LoginController::cerrarSesion');
 
 $routes->get('/registro','Registro::index');
+$routes->post('/registro/registrar', 'Registro::registrar');
+
 $routes->get('/veterinario','Veterinario::index');
 $routes->post('/veterinario/guardar','Veterinario::guardar');
 $routes->post('/veterinario/guardar_mascota', 'Mascota::guardar');
