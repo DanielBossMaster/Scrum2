@@ -6,8 +6,8 @@ use CodeIgniter\Model;
 class PropietarioModel extends Model
 {
 protected $table = 'propietario';
-protected $primaryKey= 'num_doc';
-protected $allowedFields = ['num_doc','nombre_pro','apellido_pro','direccion_pro','telefono_pro','correo_pro'];
+protected $primaryKey= 'id_propietario';
+protected $allowedFields = ['id_propietario','num_doc','nombre_pro','apellido_pro','direccion_pro','telefono_pro','correo_pro'];
 public $timestamps =false;
 
 }
