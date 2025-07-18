@@ -52,7 +52,7 @@ class Registro extends BaseController
                     'telefono_pro'         => $this->request->getPost('telefono'),
                     'correo_pro'           => $this->request->getPost('correo')
                 ], true);
-                $usuarioModel->update($usuario_id, ['propietario_id' => $propietario_id]);
+                $usuarioModel->update($usuario_id, ['id_propietario' => $propietario_id]);
 
             } elseif ($rol === 'veterinario') {
                 $veterinarioModel = new VeterinarioModel();
@@ -65,7 +65,7 @@ class Registro extends BaseController
                     'telefono_vete'         => $this->request->getPost('telefono_vete'),
                     'correo_vete'           => $this->request->getPost('correo_vete')
                 ], true);
-                $usuarioModel->update($usuario_id, ['veterinario_id' => $veterinario_id]);
+                $usuarioModel->update($usuario_id, ['id_veterinario' => $veterinario_id]);
             }   
             return redirect()->to(base_url('/login'))->with('mensaje', '¡Usuario registrado!');
         } 
