@@ -114,7 +114,7 @@
                 <input type="text" name="telefono_pro" value="<?= esc($propietario['telefono_pro']) ?>" placeholder="Teléfono" required>
                 <input type="email" name="correo_pro" value="<?= esc($propietario['correo_pro']) ?>" placeholder="Correo electrónico" required>
                 <button type="submit">Guardar Cambios</button>
-            </from>
+            </form>
                 
         </div>
 </div>
